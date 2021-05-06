@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Button, Image } from 'react-native';
 import { useSelector,useDispatch } from 'react-redux';
-import {addNumber,removeNumber} from '../store/Actions';
 
 const styles = StyleSheet.create({
     background: {
@@ -22,15 +21,10 @@ const styles = StyleSheet.create({
 
 const SelectedNumbers = (props) => {
     const data = useSelector(state => state.listOfNumbers)
-    const dispatch = useDispatch();
-    let number = {
-        number: 22,
-        amount: 987,
-        dayNight: 'Night'
-    };
+
     return (
         <View style={styles.background}>
-            <Button title='Add' onPress={() => dispatch(addNumber(number))} />
+            
             {
                 data.map(element =>
                     <View style={styles.container} key={element.number}>

@@ -1,9 +1,11 @@
 import { ADDNUMBER, REMOVENUMBER } from './ActionTypes';
 
-export const addNumber = () =>({
+export const addNumber = (numberElement) =>({
     type: ADDNUMBER,
+    payload: numberElement
 });
 
-export const removeNumber = () =>({
+export const removeNumber = (number) =>({
     type: REMOVENUMBER,
+    payload: number,
 });

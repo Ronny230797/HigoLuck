@@ -34,10 +34,10 @@ export const mainReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADDNUMBER:
-            return { ...state, listOfNumbers: [...state.listOfNumbers, number] }; // replace number by ...action.payload
+            return { ...state, listOfNumbers: [...state.listOfNumbers, action.payload] }; // replace number by ...action.payload
 
         case REMOVENUMBER:
-            return {... state,listOfNumbers: [...state.listOfNumbers, state.listOfNumbers.filter(x => x.number != 73)]}
+            return {... state,listOfNumbers: [...state.listOfNumbers, state.listOfNumbers.filter(x => x.number != action.payload)]}
         default:
             return state;
     }
